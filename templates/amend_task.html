@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amend Task</title>
+</head>
+<body>
+    <h1>Amend Task</h1>
+    <form method="post" action="/amend_task">
+
+        <label for="taskID">Task ID:</label>
+        <input type="number" id="taskID" name="taskID" required><br>
+        
+        <label for="task_name">Task Name:</label>
+        <input type="text" id="task_name" name="task_name" required><br>
+        
+        <label for="due_date">Due Date:</label>
+        <input type="date" id="due_date" name="due_date" required><br>
+        
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority" required>
+            <option value="" disabled selected>Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select><br>
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="" disabled selected>Select Status</option>
+            <option value="Incomplete">Incomplete</option>
+            <option value="Complete">Complete</option>
+        </select><br>
+        
+        <input type="submit" value="Amend Task">
+    </form>
+    
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <a href="/"><button>Return to Main Menu</button></a>
+    <a href='/get_tasks'><button>View All Tasks</button></a>

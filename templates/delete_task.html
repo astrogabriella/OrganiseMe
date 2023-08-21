@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Task Record</title>
+</head>
+<body>
+    <h1>Delete Task Record</h1>
+
+    <form method="post" action="/delete_task">
+        <label for="taskID">Enter Task ID to Delete:</label><br>
+        <input type="number" id="taskID" name="taskID" required><br><br>
+        <input type="submit" value="Delete Record">
+    </form>
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <a href="/"><button>Return to Main Menu</button></a>
+    <a href='/get_tasks'><button>View all Tasks</button></a>
+    
+</body>
+</html>

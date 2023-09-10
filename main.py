@@ -9,14 +9,17 @@ dbCursor = dbCon.cursor()
 
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def index():
-    # css_url = url_for('static', filename='CSS/main.css')
+   
     return render_template('index.html')
-
-@app.route('/menu', methods = ["POST"])
+ 
+@app.route('/menu')
 def options():
-    req = request.form.get("option")
+    
+    req = request.args.get("option")
     if req == "list":
         return redirect(url_for('get_tasks'))
     elif req == "add":  
@@ -29,7 +32,9 @@ def options():
          return redirect(url_for('search'))
     else:
         return render_template("index.html")
-    
+
+
+
 @app.route('/get_tasks', methods = ["POST","GET"])
 def get_tasks():   
     tasks = get_all_tasks.read_tasks(dbCursor)
@@ -92,5 +97,6 @@ def search_results():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    css_url = url_for('static', filename='CSS/styles.css')
 
 

@@ -3,41 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ css_url }}">
+    <!-- <link rel="stylesheet" href="{{ css_url }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Organise Me</title>
 </head>
 <body>
-    <div id="container">
-    <div id="logo"><h1 id="mainTitle">Task Flix</h1></div>
+  
+        
+    <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
     
+      <div id="container">
+    <h2 id="menuTitle">Main Menu</h2>
 
-    <form id="form" method="post" action="/menu">
-        <h2 id="menuTitle">Main Menu</h2><br>
-        <input type="radio" name="option" value="list" id="list">
-        <label for="list">List all Tasks</label><br>
-
-        <input type="radio" name="option" value="add" id="add">
-        <label for="add">Add a task</label><br>
-
-        <input type="radio" name="option" value="amend" id="amend">
-        <label for="amend">Amend a task</label><br>
-
-        <input type="radio" name="option" value="delete" id="delete">
-        <label for="delete">Delete a task</label><br>
-
-        <input type="radio" name="option" value="search" id="search">
-        <label for="search">Search</label><br>
-        <br>
-        <input id="btn" type="submit" value="Enter">
-    </form>
+    <a href="/menu?option=list">List all Tasks</a><br>
+    <a href="/menu?option=add">Add a task</a><br>
+    <a href="/menu?option=amend">Amend a task</a><br>
+    <a href="/menu?option=delete">Delete a task</a><br>
+    <a href="/menu?option=search">Search</a><br>
+    
     <div id="search-results">
         {% if search_result %}
             <h2>Search Results:</h2>

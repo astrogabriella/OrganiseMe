@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Data Display</title>
 </head>
 <body>
-    <table border="1">
+    <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
+    <table border="1" class="tbl">
         <thead>
             <tr>
                 <th>ID</th>
@@ -25,6 +27,7 @@
                 </tr>
             {% endfor %}
         </tbody>
+        
     </table>
     <a href="/"><button>Return to Main Menu</button></a>
 </body>

@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Task</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Add Task</title>
 </head>
-<body>
+<body><div class="pageGrid">
     <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
+
+    <div class="addContainer">
+    <div class="innerAdd">
     <h1>Add Task</h1>
-    <form method="post" action="/add_task">
+    <form method="post" action="/add_task" class="formAdd">
     
-        <label for="task_name">Task Name:</label>
+        <label for="task_name">Task Name</label>
         <input type="text" id="task_name" name="task_name" required><br>
         
-        <label for="due_date">Due Date:</label>
+        <label for="due_date">Due Date</label>
         <input type="date" id="due_date" name="due_date" required><br>
         
-        <label for="priority">Priority:</label>
+        <label for="priority">Priority</label>
         <select id="priority" name="priority" required>
             <option value="" disabled selected>Select Priority</option>
             <option value="Low">Low</option>
@@ -23,21 +28,29 @@
             <option value="High">High</option>
         </select><br>
         
-        <label for="status">Status:</label>
+        <label for="status">Status</label>
         <select id="status" name="status" required>
             <option value="" disabled selected>Select Status</option>
             <option value="Incomplete">Incomplete</option>
             <option value="Complete">Complete</option>
         </select><br>
         
-        <input type="submit" value="Add Task">
+        <input type="submit" value="Add Task" class="button">
     </form>
     
     
     {% if error_message %}
     <p class="error">{{ error_message }}</p>
-    {% endif %}
+    {% endif %}</div>
+    <div class="navLinks">
     <a href="/"><button>Return to Main Menu</button></a>
-    <a href='/get_tasks'><button>View All Tasks</button></a>
+    <a href='/get_tasks'><button>View All Tasks</button></a></div>
+</div>
+
+
+<footer>
+    &copy; 2023 Gabriella Masiha
+  </footer>
+<div>
 </body>
 </html>

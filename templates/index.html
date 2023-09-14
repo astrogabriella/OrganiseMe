@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="{{ css_url }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Organise Me</title>
@@ -10,6 +10,8 @@
 <body>
   
         
+<div class="pageGrid">
+
     <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
     
       <div id="container">
@@ -34,7 +36,12 @@
         {% if error_message %}
             <p>{{ error_message }}</p>
         {% endif %}
-    </div></div>
+    </div>
+</div>
+<footer>
+    &copy; 2023 Gabriella Masiha
+  </footer>
+</div>
 </body>
 </html>
 </body>

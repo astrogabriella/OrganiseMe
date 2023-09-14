@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Task</title>
-</head>
-<body>
-    <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
-    <form method="post" action="/execute_search">
-        <label for="search_query">Search Task:</label>
-        <input type="text" id="search_query" name="search_query" required>
-        <button type="submit">Search</button>
-    </form>
-    {% if error_message %}
-    <p class="error">{{ error_message }}</p>
-{% endif %}
-
-<a href="/"><button>Return to Main Menu</button></a>
-<a href='/get_tasks'><button>View All Tasks</button></a>
-
-</body>
+  </head>
+  <body>
+    <div class="pageGrid">
+      <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
+      <div class="searchContainer">
+        <div class="innerSearch">
+        <form method="post" action="/execute_search">
+          <label for="search_query">Search Task:</label>
+          <input type="text" id="search_query" name="search_query" required />
+          <button type="submit">Search</button>
+        </form>
+        {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+        {% endif %}</div>
+        <div class="navLinks">
+        <a href="/"><button>Return to Main Menu</button></a>
+        <a href="/get_tasks"><button>View All Tasks</button></a></div>
+      </div>
+      <footer>&copy; 2023 Gabriella Masiha</footer>
+    </div>
+  </body>
 </html>

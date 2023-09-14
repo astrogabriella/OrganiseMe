@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
     <title>Data Display</title>
-</head>
-<body>
-    <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
-    <table border="1" class="tbl">
-        <thead>
+  </head>
+  <body>
+    <div class="pageGrid">
+      <div id="logo"><h1 id="mainTitle">Organise Me</h1></div>
+      <div class="boxLink">
+      <div id="box">
+        <table border="1" class="tbl">
+          <thead>
             <tr>
-                <th>ID</th>
-                <th>Task Name</th>
-                <th>Due Date</th>
-                <th>Priority</th>
-                <th>Status</th>
+              <th>ID</th>
+              <th>Task Name</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+              <th>Status</th>
             </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
             {% for entry in entries %}
-                <tr>
-                    <td>{{ entry[0] }}</td>
-                    <td>{{ entry[1] }}</td>
-                    <td>{{ entry[2] }}</td>
-                    <td>{{ entry[3] }}</td>
-                    <td>{{ entry[4] }}</td>
-                </tr>
+            <tr>
+              <td>{{ entry[0] }}</td>
+              <td>{{ entry[1] }}</td>
+              <td>{{ entry[2] }}</td>
+              <td>{{ entry[3] }}</td>
+              <td>{{ entry[4] }}</td>
+            </tr>
             {% endfor %}
-        </tbody>
-        
-    </table>
-    <a href="/"><button>Return to Main Menu</button></a>
-</body>
+          </tbody>
+        </table>
+      </div> 
+      <a href="/"><button>Return to Main Menu</button></a>
+      </div>
+      <footer>&copy; 2023 Gabriella Masiha</footer>
+    </div>
+  </body>
 </html>
